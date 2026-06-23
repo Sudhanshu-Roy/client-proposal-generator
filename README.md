@@ -147,9 +147,6 @@ client-proposal-generator/
 │   ├── vite.config.js
 │   └── node_modules/
 │
-├── screenshots/
-│   ├── dashboard.png
-│   └── proposal-output.png
 │
 ├── .gitignore
 ├── README.md
