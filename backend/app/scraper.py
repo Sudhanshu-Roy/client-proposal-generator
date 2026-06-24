@@ -18,7 +18,10 @@ def scrape_website(url: str):
         }
     )
 
-    response.raise_for_status()
+    if response.status_code != 200:
+    return {
+        "content": f"Could not scrape website. Status code: {response.status_code}"
+    }
 
     soup = BeautifulSoup(
         response.text,
