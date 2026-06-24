@@ -2,15 +2,14 @@ import json
 import os
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from groq import Groq
 
 from .prompts import PROPOSAL_PROMPT
 
 load_dotenv()
 
-client = OpenAI(
-    api_key=os.getenv("AI_API_KEY"),
-    base_url=os.getenv("AI_ENDPOINT")
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 
@@ -32,7 +31,7 @@ def generate_proposal(
     )
 
     response = client.chat.completions.create(
-        model=os.getenv("AI_MODEL"),
+        model="llama-3.3-70b-versatile",
         messages=[
             {
                 "role": "system",
