@@ -67,14 +67,22 @@ def generate(data: ProposalRequest,db: Session = Depends(get_db)):
 
     except Exception as e:
 
-        logger.error(
-            f"Scraping error: {str(e)}"
+        logger.warning(
+            f"Scraping failed, using fallback. Error: {str(e)}"
         )
 
-        raise HTTPException(
-            status_code=400,
-            detail=f"Website scraping failed: {str(e)}"
-        )
+        website_data = f"""
+        Website URL: {data.website_url}
+
+        Direct website scraping was unsuccessful.
+
+        Analyze the company based on the URL,
+        inferred industry,
+        and digital marketing best practices.
+
+        Generate a professional proposal
+        despite limited website access.
+        """
 
     try:
 
