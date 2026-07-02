@@ -18,7 +18,7 @@ The result is a faster, more scalable workflow that enables agencies to create p
 
 AI Client Proposal Generator is a full-stack AI application that combines web scraping, large language models, and modern web technologies to automate proposal creation.
 
-The platform extracts meaningful information from a business website, analyzes it using GPT-4o-mini, and generates structured marketing insights including website analysis, strengths, weaknesses, SEO opportunities, lead generation strategies, social media recommendations, and expected business outcomes.
+The platform extracts meaningful information from a business website, analyzes it using groq, and generates structured marketing insights including website analysis, strengths, weaknesses, SEO opportunities, lead generation strategies, social media recommendations, and expected business outcomes.
 
 By transforming raw website data into actionable marketing proposals, the application helps agencies improve productivity, reduce manual effort, and accelerate client acquisition workflows.
 
@@ -26,7 +26,7 @@ By transforming raw website data into actionable marketing proposals, the applic
 
 An AI-powered SaaS application that automatically analyzes a business website and generates a professional digital marketing proposal within seconds.
 
-Built using FastAPI, React, Tailwind CSS, SQLite, SQLAlchemy, and GPT-4o-mini.
+Built using FastAPI, React, Tailwind CSS, SQLite, SQLAlchemy, and groq.
 
 ---
 
@@ -73,7 +73,7 @@ FastAPI Backend
  ↓
 Website Scraper
  ↓
-GPT-4o-mini
+groq
  ↓
 Structured JSON Output
  ↓
@@ -100,7 +100,7 @@ SQLite Database
 
 ### AI & Data Processing
 
-* GPT-4o-mini
+* groq
 * BeautifulSoup4
 * Requests
 
@@ -176,9 +176,7 @@ pip install -r requirements.txt
 Create a `.env` file:
 
 ```env
-AI_MODEL=gpt-4o-mini
-AI_API_KEY=YOUR_API_KEY
-AI_ENDPOINT=YOUR_ENDPOINT
+GROQ_API_KEY=YOUR_API_KEY
 ```
 
 Run backend:
